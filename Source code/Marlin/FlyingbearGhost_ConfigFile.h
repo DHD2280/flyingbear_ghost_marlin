@@ -44,7 +44,7 @@ NANO13S_STOCK   -    MKS Robin Nano 1.3s - Driver 4x TMC2225
 
 #ifndef USER_BUILD
 
- #define NANO11_STOCK                                         //<------- Define your Mainboard
+ #define NANO12_STOCK                                         //<------- Define your Mainboard
 
  #define FILAMENT_RUNOUT_SENSOR                               //<------- Enable or disable filament runout sensor
 
@@ -60,7 +60,7 @@ NANO13S_STOCK   -    MKS Robin Nano 1.3s - Driver 4x TMC2225
   #define DEFAULT_bedKi .023
   #define DEFAULT_bedKd 305.4
 
-  //#define FBGHOST_BLTOUCH                                   //<------- Define if you have Bltouch or not
+  #define FBGHOST_BLTOUCH                                   //<------- Define if you have Bltouch or not
     #if ENABLED (FBGHOST_BLTOUCH)
      #define NOZZLE_TO_PROBE_OFFSET { 0, 0, 0 }               //<------- Define your probe offset
     #endif
