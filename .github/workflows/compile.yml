@@ -31,11 +31,11 @@ jobs:
       run: |
         mkdir -p sd_card_files
         
-        find . -path "*/.pio/build/*" -type f -name "*.bin" -exec cp {} sd_card_files/ \;
+        find "Source code/.pio/build/mks_robin_nano_v1v2" -maxdepth 1 -type f -name "*.bin" -exec cp {} sd_card_files/ \;
         
-        if [ -d "assets" ]; then cp -r assets sd_card_files/; fi
-        if [ -d "mks_pic" ]; then cp -r mks_pic sd_card_files/; fi
-        if [ -d "mks_font" ]; then cp -r mks_font sd_card_files/; fi
+        if [ -d "Source code/assets" ]; then cp -r SourceCode/assets sd_card_files/; fi
+        if [ -d "Source code/mks_pic" ]; then cp -r SourceCode/mks_pic sd_card_files/; fi
+        if [ -d "Source code/mks_font" ]; then cp -r SourceCode/mks_font sd_card_files/; fi
 
     - name: upload
       uses: actions/upload-artifact@v4
