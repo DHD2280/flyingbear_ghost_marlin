@@ -31,7 +31,7 @@ jobs:
       run: |
         mkdir -p sd_card_files
         
-        cp .pio/build/mks_robin_nano_v1v2/Robin_nano35.bin sd_card_files/
+        find . -path "*/.pio/build/*" -type f -name "*.bin" -exec cp {} sd_card_files/ \;
         
         if [ -d "assets" ]; then cp -r assets sd_card_files/; fi
         if [ -d "mks_pic" ]; then cp -r mks_pic sd_card_files/; fi
