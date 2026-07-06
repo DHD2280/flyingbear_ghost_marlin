@@ -24,7 +24,7 @@ jobs:
         pip install platformio
 
     - name: Compile Firmware
-      working-directory: SourceCode
+      working-directory: "Source code"
       run: pio run -e mks_robin_nano_v1v2
 
     - name: Firmware + Assets
