@@ -33,9 +33,7 @@ jobs:
         
         find "Source code/.pio/build/mks_robin_nano_v1v2" -maxdepth 1 -type f -name "*.bin" -exec cp {} sd_card_files/ \;
         
-        if [ -d "Source code/assets" ]; then cp -r SourceCode/assets sd_card_files/; fi
-        if [ -d "Source code/mks_pic" ]; then cp -r SourceCode/mks_pic sd_card_files/; fi
-        if [ -d "Source code/mks_font" ]; then cp -r SourceCode/mks_font sd_card_files/; fi
+        find . -type d \( -name "mks_pic" -o -name "mks_font" -o -name "assets" \) -not -path "*/.pio/*" -exec cp -r {} sd_card_files/ \;
 
     - name: upload
       uses: actions/upload-artifact@v4
